@@ -1,2 +1,7 @@
-package parkinglot.models;public enum VehicleType {
+package parkinglot.models;
+
+public enum VehicleType {
+    BUS,
+    CAR,
+    TRUCK
 }

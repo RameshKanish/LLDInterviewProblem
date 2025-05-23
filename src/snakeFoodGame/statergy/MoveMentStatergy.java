@@ -1,2 +1,5 @@
-package snakeFoodGame.statergy;public interface MoveMentStatergy {
+package snakeFoodGame.statergy;
+
+public interface MoveMentStatergy {
+
 }

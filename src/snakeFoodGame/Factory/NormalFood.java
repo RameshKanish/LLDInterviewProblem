@@ -1,2 +1,5 @@
-package snakeFoodGame.Factory;public class NormalFood {
+package snakeFoodGame.Factory;
+
+public class NormalFood implements FoodFactory{
+
 }

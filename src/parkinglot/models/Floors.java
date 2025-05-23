@@ -1,2 +1,7 @@
-package parkinglot.models;public class Floors {
+package parkinglot.models;
+
+import java.util.List;
+
+public class Floors {
+
 }

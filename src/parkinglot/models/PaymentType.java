@@ -1,2 +1,7 @@
-package parkinglot.models;public class PaymentType {
+package parkinglot.models;
+
+public enum PaymentType {
+    CARD,
+    UPI,
+    CASH
 }

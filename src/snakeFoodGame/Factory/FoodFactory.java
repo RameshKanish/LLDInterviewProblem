@@ -1,2 +1,5 @@
-package snakeFoodGame.Factory;public class FoodFactory {
+package snakeFoodGame.Factory;
+
+public interface FoodFactory {
+
 }
