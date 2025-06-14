@@ -5,6 +5,7 @@ public abstract class Vehicle {
     private VehicleType type;
     private ParkingFeeStrategy parkingFeeStrategy;
 
+
     public Vehicle(String licensePlate , VehicleType type , ParkingFeeStrategy parkingFeeStrategy){
         this.licensePlate = licensePlate;
         this.type = type;

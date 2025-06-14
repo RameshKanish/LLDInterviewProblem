@@ -4,7 +4,8 @@ public class Payment {
     private double amount;
     private PaymentStatergy paymentStatergy;
 
-    public Payment(int amount , PaymentStatergy paymentStatergy){
+
+    public Payment(double amount , PaymentStatergy paymentStatergy){
         this.amount = amount;
         this.paymentStatergy = paymentStatergy;
     }

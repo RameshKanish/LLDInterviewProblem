@@ -19,22 +19,31 @@ public class ParkingLot {
         return null;
     }
 
-    public ParkingSlot parkVehicle(Vehicle vehicle){
+    public ParkingSlot parkVehicle(Vehicle vehicle , ValetManagement valetManagement){
         ParkingSlot slot = findAvailableSpot(vehicle.getType());
+        for(Valet valets : valetManagement.getValets()){
+            if(valets.isAvailable && slot != null){
 
-        if(slot != null){
-            slot.parkVehicle(vehicle);
-            return slot;
+                valets.setVehicle(vehicle);
+                valets.isAvailable = false;
+                slot.parkVehicle(vehicle);
+
+                return slot;
+            }
         }
+
         System.out.println("No Parking slot is available for this car" + vehicle.getLicensePlate());
         return null;
     }
 
-    public void vacateSpot(ParkingSlot spot , Vehicle vehicle , PaymentStatergy payment , double amount){
+    public void vacateSpot(ParkingSlot spot , Vehicle vehicle , Payment payment , Request request){
         if(spot != null && spot.isOccupied() && spot.getVehicle().getType().equals(vehicle.getType())){
+
             spot.vacate();
             if(payment != null){
-                payment.makePay(amount);
+                PaymentStatergy ps = payment.getPaymentStatergy();
+                double amount = payment.getAmount();
+                ps.makePay(amount);
             }
             System.out.println(vehicle.getType() + " " +" vacated spot"  + spot.getParkingNumber());
         }else{
